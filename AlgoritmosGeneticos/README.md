@@ -1,5 +1,8 @@
 # Experimentos de otimização e algoritmos genéticos
 
-Coloque seus experimentos de algoritmos genéticos nesta pasta.
+<br> Essa pasta se dedica a abrigar os experimentos e anotações voltadas a Algoritmos Genéticos!
 
-Esceva um README aqui para guiar o leitor sobre seus experimentos realizados.
+<br>**Documentos já disponíveis**:
+- Experimento 01: estudos de busca aleatória;
+- Experimento 02: estudos de busca em grade;
+- Funcoes.py: arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades do semestre.
