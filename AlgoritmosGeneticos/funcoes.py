@@ -9,4 +9,4 @@ def funcao_objetivo(individuo):
     '''
     return sum(individuo) 
 
-# lembrar que aqui não tem célula de texto, comentários precisam ter hashtag
+#lembrar que aqui não tem célula de texto, comentários precisam ter hashtag
