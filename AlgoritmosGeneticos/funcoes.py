@@ -1,5 +1,6 @@
 import random 
 
+#09/03
 def gene_cb():
     '''Gera um gene válido para o problema das caixas binários 
     
@@ -36,6 +37,8 @@ def funcao_objetivo(individuo):
             Um valor representando a soma dos genes do indivíduo
     '''
     return sum(individuo)
+
+
 
 # 16/03
 def populacao_cb(tamanho, n):
@@ -108,3 +111,16 @@ def cruzamento_ponto_simples(pai, mae):
     filho2 = mae[:ponto_de_corte] + pai[ponto_de_corte:] #inicio da mãe + final do pai
     
     return filho1, filho2 # vamos sempre considerar 2 reprodutores e 2 crias
+
+def mutacao_cb(individuo): 
+    '''Realiza a mutação de um gene no problema das CB
+    
+    Args:
+        individuo: uma lista representando um individuo no problema das CB
+    Return: 
+        um individuo com um gene mutado.
+    '''
+    
+    gene_a_ser_mutado = random.randint(0, len(individuo)) # qualquer gene pode ser mudado desde que ele exista em individuos
+    individuo[gene_a_ser_mutado] = gene_cb() # função da aula passada
+    return individuo
