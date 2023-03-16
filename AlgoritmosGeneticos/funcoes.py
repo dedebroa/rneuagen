@@ -36,3 +36,52 @@ def funcao_objetivo(individuo):
             Um valor representando a soma dos genes do indivíduo
     '''
     return sum(individuo)
+
+# 16/03
+def populacao_cb(tamanho, n):
+    '''Cria uma população no problema das CB.
+    
+    Args:
+        tamanho: tamanho da população.
+        n: número de genes de um indivíduo.
+        
+    Returns:
+        uma lista onde cada item é um indivíduo. Um individuo é um cromossomo ou uma lista com n genes.
+    '''
+    populacao = [] # nossa população ainda é uma lista vazia pois ainda não conhecemos os individuos
+    for _ in range(tamanho):
+        populacao.append(individuo_cb(n)) # a função dentro do parênteses foi feita em outra aula
+        # basicamente, a população vai corresponder à uma lista dos indivíduos 
+    return populacao
+
+def selecao_roleta_maxima(populacao, fitness):
+    '''Seleciona indivíduos de uma população usando o método da roleta.
+    
+    Nota: apenas funciona para problemas de maximização.
+    
+    Args: 
+        população: lista com todos os individuos da população
+        fitness: lista com os valores da função objetiva dos individuos.
+        
+    Returns:
+        População dos indivíduos selecionados.
+    '''
+# cada item tem uma chance diferente de ser selecionado, não é a  mesma cance
+# famosa lista ponderada
+    populacao_selecionada = random.choices(populacao, weights=fitness, k=len(populacao)) # k corresponde ao número de repetições
+    return populacao_selecionada
+
+def funcao_objetivo_populacao_cb(populacao):
+    '''Calcula a função objetico para todos os membros de uma população.
+    
+    Argumento:
+        população: lista com todos os indivíduos da população
+        
+    Return:
+        Lista de valores representando a fitness de cada indivíduo da população.
+    '''
+    fitness = []
+    for individuo in populacao:
+        fobje = funcao_objetivo(individuo)
+        fitness.append(fobje)
+        return fitness
