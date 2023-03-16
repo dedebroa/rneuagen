@@ -52,7 +52,7 @@ def populacao_cb(tamanho, n):
     for _ in range(tamanho):
         populacao.append(individuo_cb(n)) # a função dentro do parênteses foi feita em outra aula
         # basicamente, a população vai corresponder à uma lista dos indivíduos 
-    return populacao
+    return populacao # pedimos a lista, agora com os valores
 
 def selecao_roleta_maxima(populacao, fitness):
     '''Seleciona indivíduos de uma população usando o método da roleta.
@@ -69,6 +69,7 @@ def selecao_roleta_maxima(populacao, fitness):
 # cada item tem uma chance diferente de ser selecionado, não é a  mesma cance
 # famosa lista ponderada
     populacao_selecionada = random.choices(populacao, weights=fitness, k=len(populacao)) # k corresponde ao número de repetições
+    # nossa população agora vai corresponder aos melhores
     return populacao_selecionada
 
 def funcao_objetivo_populacao_cb(populacao):
@@ -81,7 +82,29 @@ def funcao_objetivo_populacao_cb(populacao):
         Lista de valores representando a fitness de cada indivíduo da população.
     '''
     fitness = []
-    for individuo in populacao:
+    for individuo in populacao: #calculando o fitness de cada individuo
         fobje = funcao_objetivo(individuo)
         fitness.append(fobje)
-        return fitness
+    return fitness
+
+def cruzamento_ponto_simples(pai, mae):
+    '''Operador de cruzamento de ponto simples.
+    
+    Args:
+        Pai: uma lista representando um individuo
+        Mãe: uma lista representando um outro individuo
+        
+    Return:
+        Duas listas, sendo que cada uma representa um filho dos pais que foram os argumentos. Ou seja, 2 filhos no total.
+    '''
+    
+    ponto_de_corte = random.randint(1, len(pai) - 1) # cruzamento de ponto simples no consiste em separar o os genes do individuo em duas partes
+    # metade vai para um filho e a outra metade para o outro
+    # precisa ser um número inteiro, já que não tem metade de um gene
+    # não pode ser zero, pq a intenção não é passar todos os genes de um só para o filho
+    # filho tem pai e mãe
+    
+    filho1 = pai[:ponto_de_corte] + mae[ponto_de_corte:] #inicio do pai + final da mãe
+    filho2 = mae[:ponto_de_corte] + pai[ponto_de_corte:] #inicio da mãe + final do pai
+    
+    return filho1, filho2 # vamos sempre considerar 2 reprodutores e 2 crias
