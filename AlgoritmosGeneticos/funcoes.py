@@ -36,7 +36,7 @@ def funcao_objetivo(individuo):
         Return:
             Um valor representando a soma dos genes do indivíduo
     '''
-    return sum(individuo)
+    return sum(individuo) + 1
 
 
 
@@ -121,6 +121,6 @@ def mutacao_cb(individuo):
         um individuo com um gene mutado.
     '''
     
-    gene_a_ser_mutado = random.randint(0, len(individuo)) # qualquer gene pode ser mudado desde que ele exista em individuos
+    gene_a_ser_mutado = random.randint(0, len(individuo) - 1) # qualquer gene pode ser mudado desde que ele exista em individuos
     individuo[gene_a_ser_mutado] = gene_cb() # função da aula passada
     return individuo
