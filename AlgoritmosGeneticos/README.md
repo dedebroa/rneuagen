@@ -7,8 +7,11 @@
 - 'funcoes.py': arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário.
 
 <br>**Descrição dos experimentos encontrados nessa pasta**:
+<br>**Semana 01**
 - Experimento 01: estudos de busca aleatória;
 - Experimento 02: estudos de busca em grade;
-- Experimento 03:
+<br>**Semana 02**
+- Experimento 03: primeiros exercícios com algoritmos genéticos diretamente, maximização em caixas binárias;
+<br>**Semana 03**
 - Experimento 04:
 - Experimento 05:
