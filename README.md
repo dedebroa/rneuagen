@@ -4,7 +4,10 @@
 
 <br>A fim de introduzir o assunto, cabe aqui uma breve apresentação sobre redes neurais e algoritmos genéticos. Ambos tópicos se tratam de ferramentas de programação, tendo elas sidas desenvolvidas com inspirações advindas da Biologia. 
 > 'Redes Neurais', por exemplo, faz referência ao cérebro, seus componentes e funcionamento. 
+
 > Por outro lado, os 'Algoritmos Genéticos' de fato foram baseados em conceitos da Genética, como genes, cromossomos e indivíduos. 
+
+
 Ler sobre esses assuntos se mostra uma atividade muito interessante, uma vez que realmente foi um desenvolvimento adequado, faz muito sentido a maneira como tais ferramentas funcionam e espero que isso fique claro também com os experimentos e anotações que ficarão disponíveis aqui no GitHub.
 
 <hr>
