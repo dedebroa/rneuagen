@@ -124,3 +124,92 @@ def mutacao_cb(individuo):
     gene_a_ser_mutado = random.randint(0, len(individuo) - 1) # qualquer gene pode ser mudado desde que ele exista em individuos
     individuo[gene_a_ser_mutado] = gene_cb() # função da aula passada
     return individuo
+
+######## 23 MARÇO
+def gene_cnb(valor_max_caixa): #arugumento pode ser só o máximo, pq o mínimo já é definido zero por padrão
+    '''Gera um gene válido para o problema das caixas não binárias.
+    
+    Args:
+        valor_max_caixa: valor máximo que a caixa pode assumir
+        
+    Returns:
+        um valor entre 0 e 'valor_max_caixa' (incluso)
+    '''
+    
+    gene = random. randint(0, valor_max_caixa)
+    return gene
+
+def individuo_cnb(numero_genes, valor_max_caixa):
+    '''Gera um individuoválido para o problema das caixas não binárias
+    
+    Args:
+        numero_genes: número de genes na lista que representa o indivíduo
+        valor_max_caixa: valor máximo que a caixa pode assumir
+        
+    Returns:
+        Uma lista que representa um indivíduo válido para o problema das caixas não-binárias 
+    '''
+    
+    individuo = []
+    for _ in range(numero_genes): 
+        gene = gene_cnb(valor_max_caixa)
+        individuo.append(gene)
+    return individuo 
+
+def populacao_cnb(tamanho_populacao, numero_genes, valor_max_caixa):
+    '''Cria uma população de indivíduos para o problema das caixas não binárias.
+    
+    Args:
+        tamanho_populacao: número de individuos da população
+        numero_genes: número de egenes do individuo
+        valor_max_caixa: valor máximo que a caixa pode assumir
+        
+    Returns:
+        uma lista onde cada item representa indivíduo
+    '''
+    
+    populacao = []
+    for _ in range (tamanho_populacao):
+        individuo = individuo_cnb(numero_genes, valor_max_caixa)
+        populacao.append(individuo)
+    return populacao 
+
+def funcao_objetivo_cnb(individuo):
+    '''Calcula o fitness do individuo para o problema CNB
+    
+    Args:
+        individuo: lista que representa um individuo 
+        
+    Returns:
+        um valor que representa o fitness do indivíduo
+    '''
+    fitness = sum(individuo)
+    return fitness
+
+def funcao_objetivo_pop_cnb(populacao):
+    '''Calcula o fitness da populacao completa
+    
+    Args:
+        populacao = lista com todos os ind. da populacao
+        
+    Returns:
+        uma lista com o fitness de cada individuo de cada individuo em ordem
+    '''
+    fitness_pop = []
+    for individuo in populacao:
+        fitness_ind = funcao_objetivo_cnb(individuo)
+        fitness_pop.append(fitness_ind)
+    return fitness_pop
+
+def mutacao_cnb(individuo, valor_max_caixa):
+    '''Realiza a mutação do individuo
+    
+    Args:
+        individuo: individuo que deve sofrer a mutação
+        valor_max_caixa: valor máximo que a caixa pode assumir
+    Returns:
+        individuo mutado
+    '''
+    gene_a_ser_mutado = random.randint(0, len(individuo) -1)
+    individuo[gene_a_ser_mutado] = gene_cnb(valor_max_caixa)
+    return individuo 
