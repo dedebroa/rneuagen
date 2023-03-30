@@ -22,4 +22,5 @@
 - Experimento 04: maximização em caixas não binárias. Aula ministrada por um dos alunos da classe!
 
 <br>**Semana 04**
-- Experimento 05:
+- Experimento 05: descobrindo a senha, um problema básico, mas diferente, envolvendo letras e minimização;
+- Experimento Escolhido - A Função de Himmeblau;
