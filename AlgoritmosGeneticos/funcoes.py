@@ -213,3 +213,140 @@ def mutacao_cnb(individuo, valor_max_caixa):
     gene_a_ser_mutado = random.randint(0, len(individuo) -1)
     individuo[gene_a_ser_mutado] = gene_cnb(valor_max_caixa)
     return individuo 
+
+#### 30/03 - Problema das Senhas
+# começando do início: genes, indidividuo e população
+# GENES
+def gene_letra(letras): # nossas opções já não são mais de 0 a 100 ou 0 e 1, trabalhamos agora com letras 
+    """Sorteia uma letra.
+    Args:
+      letras: letras possíveis de serem sorteadas.
+    Return:
+      Retorna uma letra dentro das possíveis de serem sorteadas.
+    """
+    letra = random.choice(letras)
+    return letra
+
+# INDIVIDUO
+def individuo_senha(tamanho_senha, letras):
+    """Cria um candidato para o problema da senha
+    Args:
+      tamanho_senha: inteiro representando o tamanho da senha.
+      letras: letras possíveis de serem sorteadas.
+    Return:
+      Lista com n letras
+    """
+
+    candidato = []
+
+    for n in range(tamanho_senha):
+        candidato.append(gene_letra(letras))
+
+    return candidato
+
+# POPULAÇÃO
+def populacao_inicial_senha(tamanho, tamanho_senha, letras):
+    """Cria população inicial no problema da senha
+    Args
+      tamanho: tamanho da população.
+      tamanho_senha: inteiro representando o tamanho da senha.
+      letras: letras possíveis de serem sorteadas.
+    Returns:
+      Lista com todos os indivíduos da população no problema da senha.
+    """
+    populacao = []
+    for n in range(tamanho):
+        populacao.append(individuo_senha(tamanho_senha, letras))
+    return populacao
+
+# roleta não serve mais, ela só serve para maximização
+# código para seleção por sorteio
+def selecao_torneio_min(populacao, fitness, tamanho_torneio=3):
+    """Faz a seleção de uma população usando torneio.
+    Nota: da forma que está implementada, só funciona em problemas de
+    minimização.
+    Args:
+      populacao: população do problema
+      fitness: lista com os valores de fitness dos individuos 
+      tamanho_torneio: quantidade de invidiuos que batalham entre si
+    Returns:
+      Individuos selecionados. Lista com os individuos selecionados com mesmo
+      tamanho do argumento `populacao`.
+    """
+    selecionados = [] # tem os individuos que foram selecionados com menor fitness a cada combate 
+
+    # criamos essa variável para associar cada individuo com seu valor de fitness
+    par_populacao_fitness = list(zip(populacao, fitness)) # zip navega duas listas de ponto a ponto
+    # cada item é um par, sendo o primeiro item o indivíduo e o segundo item o fitness desse indivíduo
+
+    # vamos fazer len(populacao) torneios! Que comecem os jogos!
+    for _ in range(len(populacao)): # for roda o número de vezes da população 
+        combatentes = random.sample(par_populacao_fitness, tamanho_torneio) # proeblema de mini = queremos o menor fitness
+
+        # é assim que se escreve infinito em python
+        minimo_fitness = float("inf")
+
+        for par_individuo_fitness in combatentes:
+            individuo = par_individuo_fitness[0]
+            fit = par_individuo_fitness[1]
+
+            # queremos o individuo de menor fitness
+            if fit < minimo_fitness: 
+                selecionado = individuo # passamos por todos os combatentes e pegamos o com menor fitness
+                minimo_fitness = fit
+
+        selecionados.append(selecionado)
+
+    return selecionados # ninguém morre, só não é selecionado
+                        # um individuo pode ser selecionado mais de uma vez 
+                        # isso não é um problema pq 1) já sabemos que ele é bom 2) haverá cruzamento 3) haverá mutação
+
+# mutação
+def mutacao_senha(individuo, letras): # a mutação não muda mais números, muda letras 
+    """Realiza a mutação de um gene no problema da senha.
+    Args:
+      individuo: uma lista representado um individuo no problema da senha
+      letras: letras possíveis de serem sorteadas.
+    Return:
+      Um individuo (senha) com um gene mutado.
+    """
+    gene = random.randint(0, len(individuo) - 1)
+    individuo[gene] = gene_letra(letras)
+    return individuo
+
+# função objetivo/fitness
+# professor acha que essa função é a mais difícil
+def funcao_objetivo_senha(individuo, senha_verdadeira):
+    """Computa a funcao objetivo de um individuo no problema da senha
+    Args:
+      individiuo: lista contendo as letras da senha
+      senha_verdadeira: a senha que você está tentando descobrir
+    Returns:
+      A "distância" entre a senha proposta e a senha verdadeira. Essa distância
+      é medida letra por letra. Quanto mais distante uma letra for da que
+      deveria ser, maior é essa distância.
+    """
+    diferenca = 0
+
+    for letra_candidato, letra_oficial in zip(individuo, senha_verdadeira): # zip permite interar em mais de uma lista ao mesmo tempo
+        diferenca = diferenca + abs(ord(letra_candidato) - ord(letra_oficial)) # ord está permitindo converter a letra em um número
+                                                                               # é sempre o mesmo número, n se atribui valores aleatórios
+                                                                            # há diferença entre maísculo e minúsculo
+
+    return diferenca
+
+# func. objetivo população
+def funcao_objetivo_pop_senha(populacao, senha_verdadeira):
+    """Computa a funcao objetivo de uma populaçao no problema da senha.
+    Args:
+      populacao: lista com todos os individuos da população
+      senha_verdadeira: a senha que você está tentando descobrir
+    Returns:
+      Lista contendo os valores da métrica de distância entre senhas.
+    """
+    resultado = []
+
+    for individuo in populacao:
+        resultado.append(funcao_objetivo_senha(individuo, senha_verdadeira))
+
+    return resultado
