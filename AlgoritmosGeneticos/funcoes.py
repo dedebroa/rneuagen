@@ -140,11 +140,11 @@ def gene_cnb(valor_max_caixa): #arugumento pode ser só o máximo, pq o mínimo 
     return gene
 
 def individuo_cnb(numero_genes, valor_max_caixa):
-    '''Gera um individuoválido para o problema das caixas não binárias
+    '''Gera um individuo válido para o problema das caixas não binárias.
     
     Args:
-        numero_genes: número de genes na lista que representa o indivíduo
-        valor_max_caixa: valor máximo que a caixa pode assumir
+        numero_genes: número de genes na lista que representa o indivíduo;
+        valor_max_caixa: valor máximo que a caixa pode assumir.
         
     Returns:
         Uma lista que representa um indivíduo válido para o problema das caixas não-binárias 
@@ -214,7 +214,7 @@ def mutacao_cnb(individuo, valor_max_caixa):
     individuo[gene_a_ser_mutado] = gene_cnb(valor_max_caixa)
     return individuo 
 
-#### 30/03 - Problema das Senhas
+#### 30/03 - E5: Problema das Senhas
 # começando do início: genes, indidividuo e população
 # GENES
 def gene_letra(letras): # nossas opções já não são mais de 0 a 100 ou 0 e 1, trabalhamos agora com letras 
@@ -259,7 +259,7 @@ def populacao_inicial_senha(tamanho, tamanho_senha, letras):
         populacao.append(individuo_senha(tamanho_senha, letras))
     return populacao
 
-# roleta não serve mais, ela só serve para maximização
+# roleta não serve mais, ela só serve para maximização (da maneira como fizemos até aqui)
 # código para seleção por sorteio
 def selecao_torneio_min(populacao, fitness, tamanho_torneio=3):
     """Faz a seleção de uma população usando torneio.
@@ -273,7 +273,7 @@ def selecao_torneio_min(populacao, fitness, tamanho_torneio=3):
       Individuos selecionados. Lista com os individuos selecionados com mesmo
       tamanho do argumento `populacao`.
     """
-    selecionados = [] # tem os individuos que foram selecionados com menor fitness a cada combate 
+    selecionados = [] # tem os individuos que foram selecionados com menor fitness a cada combate (prob. de minimização)
 
     # criamos essa variável para associar cada individuo com seu valor de fitness
     par_populacao_fitness = list(zip(populacao, fitness)) # zip navega duas listas de ponto a ponto
@@ -281,7 +281,7 @@ def selecao_torneio_min(populacao, fitness, tamanho_torneio=3):
 
     # vamos fazer len(populacao) torneios! Que comecem os jogos!
     for _ in range(len(populacao)): # for roda o número de vezes da população 
-        combatentes = random.sample(par_populacao_fitness, tamanho_torneio) # proeblema de mini = queremos o menor fitness
+        combatentes = random.sample(par_populacao_fitness, tamanho_torneio) # problema de minimização = queremos o menor fitness
 
         # é assim que se escreve infinito em python
         minimo_fitness = float("inf")
