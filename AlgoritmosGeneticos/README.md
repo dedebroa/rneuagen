@@ -23,4 +23,7 @@
 
 <br>**Semana 04**
 - Experimento 05: descobrindo a senha, um problema básico, mas diferente, envolvendo letras e minimização;
-- Experimento Escolhido - A Função de Himmeblau;
+- Experimento Escolhido - A Função de Himmeblau: descobrindo as coordenadas do ponto mínimo global da Função de Himmenblau usando algoritmos genéticos; problema de minimização;
+- 'himmenblau.png': imagem utilizada para elucidação de conceios no notebook do experimento escolhido;
+
+<br>**Semana 04**
