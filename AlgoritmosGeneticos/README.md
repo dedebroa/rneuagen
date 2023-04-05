@@ -1,7 +1,7 @@
 # Experimentos de otimização e algoritmos genéticos
 
-<br> Essa pasta se dedica a abrigar os experimentos e anotações voltadas a Algoritmos Genéticos! Nesse sentido, todas as atividades aqui presentes estarão sendo realizadas com suporte de algoritmos genéticos.
-<br> De maneira geral, os conceitos estudados nesse semestre foram inspirados por conceitos da biologia. Nesse caso, a literatura fala muito sobre cromossomos, genes e indivíduos. As analogias são interessantíssimas e fazem bastante sentido, além de os algoritmos serem extremamente úteis em diferentes situações, sendo elas complexas matematicamente ou não.
+<br><justify>Essa pasta se dedica a abrigar os experimentos e anotações voltadas a Algoritmos Genéticos! Nesse sentido, todas as atividades aqui presentes estarão sendo realizadas com suporte de algoritmos genéticos.
+<br> De maneira geral, os conceitos estudados nesse semestre foram inspirados por conceitos da biologia. Nesse caso, a literatura fala muito sobre cromossomos, genes e indivíduos. As analogias são interessantíssimas e fazem bastante sentido, além de os algoritmos serem extremamente úteis em diferentes situações, sendo elas complexas matematicamente ou não.</justify>
 
 <hr>
 
