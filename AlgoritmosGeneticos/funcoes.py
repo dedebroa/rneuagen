@@ -354,7 +354,7 @@ def funcao_objetivo_pop_senha(populacao, senha_verdadeira):
 ### 30/05 - GA.06: Himmenblau
 
 
-#### 05/04 - A.06: O caixeiro viajante
+#### 06/04 - A.06: O caixeiro viajante
 def distancia_entre_dois_pontos(a, b):
     """Computa a distância Euclidiana entre dois pontos em R^2
     Args:
@@ -387,7 +387,7 @@ def cria_cidades(n): # criamos diferentes opções de cidade para quais o caixei
     cidades = {}
 
     for i in range(n):
-        cidades[f"Cidade {i}"] = (random.random(), random.random())
+        cidades[f"Cidade {i}"] = (random.random(), random.random()) # tupla: imutável: cidades não saem do lugar # não cabe alterações
 
     return cidades
 
@@ -401,9 +401,11 @@ def individuo_cv(cidades):
       Retorna uma lista de nomes de cidades formando um caminho onde visitamos
       cada cidade apenas uma vez.
     """
-    pass
+    nomes = list(cidades.keys()) # o método 'keys()' reotorna 'a view object', esse objeto contém as chaves do dicionário
+    random.shuffle(nomes) # embaralha todos os nomes
+    return nomes 
 
-def populacao_inicial_cv(tamanho, cidades):
+def populacao_inicial_cv(tamanho, cidades): # a ideia geral de população não muda
     """Cria população inicial no problema do caixeiro viajante.
     Args
       tamanho:
@@ -416,8 +418,8 @@ def populacao_inicial_cv(tamanho, cidades):
       viajante.
     """
     populacao = []
-    for _ in range(tamanho):
-        populacao.append(individuo_cv(cidades))
+    for _ in range(tamanho): #range do tamanho da população
+        populacao.append(individuo_cv(cidades)) # add na lista o indivíduo gerado
     return populacao
 
 def cruzamento_ordenado(pai, mae):
@@ -427,56 +429,101 @@ def cruzamento_ordenado(pai, mae):
     problemas onde a ordem dos genes é importante e não podemos alterar os genes
     em si. É um cruzamento que pode ser usado no problema do caixeiro viajante.
     Ver pág. 37 do livro do Wirsansky.
+    
     Args:
       pai: uma lista representando um individuo
       mae : uma lista representando um individuo
     Returns:
       Duas listas, sendo que cada uma representa um filho dos pais que foram os
       argumentos. Estas listas mantém os genes originais dos pais, porém altera
-      a ordem deles
+      a ordem deles.
     """
-    pass
+    
+    corte1 = random.randint(0, len(pai) -2) # garantimos que ele nunca vai chegar no final
+    corte2 = random.randint(corte1 + 1, len(pai) -1) # se fazemos o corte 2 com base no 1, garantimos que ele não vai chegar no final também
+    
+    filho1 = pai[corte1:corte2] # cortes definindo a construção do filho # começa pelo pai
+    for gene in mae: # precisamos considerar a mãe também
+        if gene not in filho1:
+            filho1.append(gene)
+            
+    filho2 = pai[corte1:corte2] # cortes definindo a construção do filho # começa pelo pai
+    for gene in pai: # precisamos considerar a mãe também
+        if gene not in filho2:
+            filho2.append(gene)
+             
+    return filho1, filho2
 
 def mutacao_de_troca(individuo):
     """Troca o valor de dois genes.
+    
     Args:
-      individuo: uma lista representado um individuo.
+      Indivíduo: uma lista representado um individuo.
     Return:
-      O indivíduo recebido como argumento, porém com dois dos seus genes
-      trocados de posição.
+      O indivíduo recebido como argumento, porém com dois dos seus genes trocados de posição.
     """
-    pass
-
+    
+    # primeiro passo: selecionar dois individuos
+    indices =list(range(len(individuo))) # vamos sortear a posição de genes dentro dos individuos 
+    lista_sorteada = random.sample(indices, k = 2) # sorteamos dois índices 
+    
+    indice1 = lista_sorteada[0]
+    indice2 = lista_sorteada[1]
+    
+    individuo[indice1], individuo[indice2] = individuo[indice2], individuo[indice1]
+    
+    return individuo  
+    
+    # outro jeito seria:
+    # depois de definir os indices
+    # gene1 = lista_sorteada[0]
+    # gene 2 = lista_sorteada[1]
+    # individuo[indice1] = gene2
+    # individuo[indice2] = gene1
 
 def funcao_objetivo_cv(individuo, cidades):
     """Computa a funcao objetivo de um individuo no problema do caixeiro viajante.
+    
     Args:
       individiuo:
         Lista contendo a ordem das cidades que serão visitadas
       cidades:
-        Dicionário onde as chaves são os nomes das cidades e os valores são as
-        coordenadas das cidades.
+        Dicionário onde as chaves são os nomes das cidades e os valores são as coordenadas das cidades.
     Returns:
-      A distância percorrida pelo caixeiro seguindo o caminho contido no
-      `individuo`. Lembrando que após percorrer todas as cidades em ordem, o
+      A distância percorrida pelo caixeiro seguindo o caminho contido no `individuo`. Lembrando que após percorrer todas as cidades em ordem, o
       caixeiro retorna para a cidade original de onde começou sua viagem.
     """
 
     distancia = 0
-
+    
+    for posicao in range(len(individuo) - 1):
+                         
+        partida = cidades[individuo[posicao]]
+        chegada = cidades[individuo[posicao + 1]]
+                         
+        percurso = distancia_entre_dois_pontos(partida, chegada)
+        distancia = distancia + percurso
+                         
+    # calculando o caminho de volta para a cidade inicial
+    partida = cidades[individuo[-1]]
+    chegada = cidades[individuo[0]]
+                         
+    percurso = distancia_entre_dois_pontos(partida, chegada)
+    distancia = distancia + percurso
+                         
     return distancia
 
 def funcao_objetivo_pop_cv(populacao, cidades):
     """Computa a funcao objetivo de uma população no problema do caixeiro viajante.
+    
     Args:
       populacao:
-        Lista com todos os inviduos da população
+        Lista com todos os indivíduos da população
       cidades:
         Dicionário onde as chaves são os nomes das cidades e os valores são as
         coordenadas das cidades.
     Returns:
-      Lista contendo a distância percorrida pelo caixeiro para todos os
-      indivíduos da população.
+      Lista contendo a distância percorrida pelo caixeiro para todos os indivíduos da população.
     """
 
     resultado = []
