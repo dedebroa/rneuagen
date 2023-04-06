@@ -27,4 +27,4 @@
 - 'himmenblau.png': imagem utilizada para elucidação de conceios no notebook do experimento escolhido;
 
 <br>**Semana 05**
-- Experimento A.06: o problema do caixeiro viajanta, na qual um viajante deseja retornar para sua cidade inicial após passar por todas as cidades disponíveis e ele quer fazer isso pelo menor caminho possível (problema de minimização);
+- Experimento A.06: o problema do caixeiro viajante, na qual um viajante deseja retornar para sua cidade inicial após passar por todas as cidades disponíveis e ele quer fazer isso pelo menor caminho possível (problema de minimização);
