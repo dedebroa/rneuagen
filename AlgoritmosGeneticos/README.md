@@ -5,7 +5,7 @@
 
 <hr>
 
-<br><center>**Descrição de documentos mais relevantes**:</center>
+<br>**Descrição de documentos mais relevantes**:
 - 'funcoes.py': arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário.
 
 <hr> 
