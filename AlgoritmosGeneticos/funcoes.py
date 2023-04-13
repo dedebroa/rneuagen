@@ -550,7 +550,16 @@ def computa_mochila(individuo, objetos, ordem_dos_nomes):
     """
 
     "vamos preencher aqui"
-
+    valor_total = 0
+    peso_total = 0
+    
+    for pegou_o_item_ou_nao, nome_do_item in zip(individuo, ordem_dos_nomes): 
+        if pegou_o_item_ou_nao == 1:  # quer dizer que o item já está na mochila
+            valor_do_item = objetos[nome_do_item]["valor"] # queremos somente o valor, não o peso, por isso se especifica 
+            peso_do_item = objetos[nome_do_item]["peso"] # aqui, não queremos o valor, apenas o peso
+            valor_total = valor_total + valor_do_item
+            peso_total = peso_total + peso_do_item
+            
     return valor_total, peso_total
 
 
@@ -567,13 +576,15 @@ def funcao_objetivo_mochila(individuo, objetos, limite, ordem_dos_nomes):
       ordem_dos_nomes:
         Lista contendo a ordem dos nomes dos objetos.
     Returns:
-      Valor total dos itens inseridos na mochila considerando a penalidade para
-      quando o peso excede o limite.
+      Valor total dos itens inseridos na mochila considerando a penalidade para quando o peso excede o limite.
     """
-
-    "vamos preencher aqui"
-
-    pass
+    valor_mochila, peso_mochila = computa_mochila(individuo, objetos, ordem_dos_nomes)
+      
+    # estamos escrevendo aqui o que está como texto na introdução do notebook
+    if peso_mochila > limite: 
+        return 0.01
+    else:
+        return valor_mochila
 
 def funcao_objetivo_pop_mochila(populacao, objetos, limite, ordem_dos_nomes):
     """Computa a fun. objetivo de uma populacao no problema da mochila
@@ -581,8 +592,7 @@ def funcao_objetivo_pop_mochila(populacao, objetos, limite, ordem_dos_nomes):
       populacao:
         Lista com todos os individuos da população
       objetos:
-        Dicionário onde as chaves são os nomes dos objetos e os valores são
-        dicionários com a informação do peso e valor.
+        Dicionário onde as chaves são os nomes dos objetos e os valores são dicionários com a informação do peso e valor.
       limite:
         Número indicando o limite de peso que a mochila aguenta.
       ordem_dos_nomes:
@@ -600,3 +610,4 @@ def funcao_objetivo_pop_mochila(populacao, objetos, limite, ordem_dos_nomes):
         )
 
     return resultado
+
