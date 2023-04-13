@@ -11,6 +11,7 @@
 <hr> 
 
 <br>**Descrição dos experimentos encontrados nessa pasta**:
+<br> Todos eles estão finalizados, com exceção daqueles que tiverem uma indicação do contrário.
 <br>**Semana 01**
 - Experimento A.01: estudos de busca aleatória;
 - Experimento A.02: estudos de busca em grade;
@@ -23,8 +24,12 @@
 
 <br>**Semana 04**
 - Experimento A.05: descobrindo a senha, um problema básico, mas diferente, envolvendo letras e minimização;
-- Experimento GA.06 - A Função de Himmenblau: descobrindo as coordenadas do ponto mínimo global da Função de Himmenblau usando algoritmos genéticos; problema de minimização;
+- Experimento GA.06 - A Função de Himmenblau: descobrindo as coordenadas do ponto mínimo global da Função de Himmenblau usando algoritmos genéticos; problema de minimização (EM ANDAMENTO);
 - 'himmenblau.png': imagem utilizada para elucidação de conceios no notebook do experimento escolhido;
 
 <br>**Semana 05**
 - Experimento A.06: o problema do caixeiro viajante, na qual um viajante deseja retornar para sua cidade inicial após passar por todas as cidades disponíveis e ele quer fazer isso pelo menor caminho possível (problema de minimização);
+- Experimento GA.02 - Comparando Performances: comparação de performances dos diferentes algoritmos que foram utilizados para a resolução dos problemas de caixas binárias.
+
+<br>**Semana 06**
+- Experimento A.07: Aplicando restrições na busca e o problema da mochila; problema de maximização que conta com algumas limitações que precisam ser traduzidas no código;
