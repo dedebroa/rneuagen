@@ -1,4 +1,4 @@
-#Redes Neurais 🧠 e Algoritmos Genéticos 🧬
+REDES NEURAIS 🧠 & ALGORITMOS GENÉTICOS 🧬
 
 <br>***A disciplina de Redes Neurais e Algoritmos Genéticos é ministrada pelo Prof. Dr. Daniel Cassar, no terceiro período do curso de Ciência e Tecnologia da Ilum - Escola de Ciência/CNPEM.O presente repositório, portanto, será atualizado ao longo de 2023.1 conforme demanda, a intenção é que todas as tarefas desenvolvidas sejam disponibilizadas aqui.***
 
