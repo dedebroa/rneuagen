@@ -33,3 +33,10 @@
 
 <br>**Semana 06**
 - Experimento A.07: Aplicando restrições na busca e o problema da mochila; problema de maximização que conta com algumas limitações que precisam ser traduzidas no código;
+
+<br>**Semana 07**
+> Em cada um deles estudamos maneiras diferentes de fazer DEAP. Por exemplo: testamos com ou sem 'eaSimple', testamos para as caixas binárias e para as caixas não-binárias, para o problema das senhas. Material muito interessante para introdução ao asusnto.
+- Experimento A.08: Usando o módulo DEAP;
+- Experimento A.09: Usando o módulo DEAP sem o eaSimple;
+- Experimento A.10: Resolvendo as caixas não-binárias com DEAP;
+- Experimento A.11: Descobrindo a senha com DEAP.
