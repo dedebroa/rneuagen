@@ -11,7 +11,7 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 
 > Descreverei os documentos conforme eles forem utilizados e/ou alterados. No caso de perceber que há um documento na pasta que não foi descrito aqui, saiba que ele provavelmente estará em branco. 
 
-<br> **'funcoes.py':** arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário.
+- **'funcoes.py':** arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário.
 
 <br>
 
