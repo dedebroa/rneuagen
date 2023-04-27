@@ -2,7 +2,7 @@ import random
 
 #09/03
 def gene_cb():
-    '''Gera um gene válido para o problema das caixas binários 
+    '''Gera um gene válido para o problema das caixas binárias 
     
     Return:
         Ou retorna zero ou retona um
@@ -24,11 +24,11 @@ def individuo_cb(n):
     individuo = [] # importante lembrar: o indivíduo corresponde ao conjunto de 4 genes, ou seja, ele será uma lista desses 4 valores
     for i in range(n):
         gene = gene_cb()
-        individuo.append(gene)
-    return individuo
+        individuo.append(gene) # o append adiciona um elemento ao final de uma lista
+    return individuo # ou seja, add um gene à lista que corresponde a um indivíduo
     
 def funcao_objetivo(individuo):
-    '''Computa a função objetivo para o problema cb.
+    '''Computa a função objetivo para o problema das caixas binárias.
     
         Argumentos:
             Individuo: lista contendo os genes das caixas binárias
@@ -72,8 +72,9 @@ def selecao_roleta_maxima(populacao, fitness):
 # cada item tem uma chance diferente de ser selecionado, não é a  mesma cance
 # famosa lista ponderada
     populacao_selecionada = random.choices(populacao, weights=fitness, k=len(populacao)) # k corresponde ao número de repetições
-    # nossa população agora vai corresponder aos melhores
-    return populacao_selecionada
+    # seleção é aleatória, mas tem influência dos fitness que são um peso
+    # o número de repetições é igual ao tamanho da população (número de elementos da lista)
+    return populacao_selecionada # nossa população agora vai corresponder aos melhores
 
 def funcao_objetivo_populacao_cb(populacao):
     '''Calcula a função objetico para todos os membros de uma população.
@@ -136,7 +137,7 @@ def gene_cnb(valor_max_caixa): #arugumento pode ser só o máximo, pq o mínimo 
         um valor entre 0 e 'valor_max_caixa' (incluso)
     '''
     
-    gene = random. randint(0, valor_max_caixa)
+    gene = random. randint(0, valor_max_caixa) # valor máximo não é mais 1, passa a ser aquele deifnido pela constante
     return gene
 
 def individuo_cnb(numero_genes, valor_max_caixa):
