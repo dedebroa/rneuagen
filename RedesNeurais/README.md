@@ -6,6 +6,7 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 </div>
 
 <br>
+<hr>
 
 <br> **Documentos encontrados na pasta**:
 
@@ -14,6 +15,7 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 - **'funcoes.py':** arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário.
 
 <br>
+<hr>
 
 **Descrição dos experimentos encontrados nessa pasta:**
 
