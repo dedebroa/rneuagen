@@ -22,3 +22,9 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 > Os experimentos consistem nas atividades que estão sendo realizadas pelos alunos conforme o avanço do semestre. Todos eles estão finalizados, com exceção daqueles que tiverem uma indicação do contrário.
 
 **1. SEMANA 01**
+Não realizadmos experimentos, a aula foi de teoria sobre as redes neurais. Fomos relembrados de conceitos como grafos, derivadas, gradientes, agora em um novo contexto. Também nos foi apresentado o conceito de 'backpropagation', que nos permite analisar a influência de todas as partes do nosso grafo no resultado final. Esses conceitos, embora não estejam sendo muito bem explorados aqui no readme, serão bastante trabalhados nos notebooks futuramente disponibilizados aqui, logo, sugiro que fique de olho caso queira entender melhor :)
+
+**2. SEMANA 02**
+- Experimento R.01:
+- Experimento R.02:
+- Experimento R.03:
