@@ -23,6 +23,8 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 <br> Não realizadmos experimentos, a aula foi de teoria sobre as redes neurais. Fomos relembrados de conceitos como grafos, derivadas, gradientes, agora em um novo contexto. Também nos foi apresentado o conceito de 'backpropagation', que nos permite analisar a influência de todas as partes do nosso grafo no resultado final. Esses conceitos, embora não estejam sendo muito bem explorados aqui no readme, serão bastante trabalhados nos notebooks futuramente disponibilizados aqui, logo, sugiro que fique de olho caso queira entender melhor :)
 
 **2. SEMANA 02**
+- Experimento R.02: 'Introdução ao conceito de classes', fundamental não somente para redes neurais, mas para programar em contextos diversos;
+- Experimento R.03: 'Construindo um grafo automaticamente', construção de um grafo (passo a passo) considerando todos os seus componentes essenciais. A visualização em grafos ajuda, na minha opinião, a visualizar a dinâmica de backpropagation. Caso deseje entender um pouco mais sobre o meu entendimento pessoal, leia a seção de 'Playground' do notebook em questão.
+
+**3. SEMANA 03**
 - Experimento R.01:
-- Experimento R.02:
-- Experimento R.03:
