@@ -29,3 +29,6 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 **3. SEMANA 03**
 - Experimento R.01: relembrando o conceito de derivada, que é muito relevante para nós, já que trataremos extensivamente de gradientes;
 - Experimento R.04: Computando gradientes locais: aprendendo a computar gradientes, tanto manualmente como automaticamente; introdução à ferramenta 'autograd';
+
+**4. SEMANA 04**
+- 
