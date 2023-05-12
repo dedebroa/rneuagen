@@ -27,4 +27,5 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 - Experimento R.03: 'Construindo um grafo automaticamente', construção de um grafo (passo a passo) considerando todos os seus componentes essenciais. A visualização em grafos ajuda, na minha opinião, a visualizar a dinâmica de backpropagation. Caso deseje entender um pouco mais sobre o meu entendimento pessoal, leia a seção de 'Playground' do notebook em questão.
 
 **3. SEMANA 03**
-- Experimento R.01:
+- Experimento R.01: relembrando o conceito de derivada, que é muito relevante para nós, já que trataremos extensivamente de gradientes;
+- Experimento R.04: Computando gradientes locais: aprendendo a computar gradientes, tanto manualmente como automaticamente; introdução à ferramenta 'autograd';
