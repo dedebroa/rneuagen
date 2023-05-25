@@ -1,3 +1,7 @@
+import math 
+
+############## 25/05 ################
+
 class Valor:
     def __init__(self, data, progenitor=(), operador_mae="", rotulo=""): # só roda quando criamos uma instância
         self.data = data
@@ -117,5 +121,6 @@ class Valor:
 
         for v in reversed(ordem_topologica):
             v.propagar() 
+            
             
             
