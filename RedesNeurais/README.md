@@ -10,7 +10,8 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 
 > Descreverei os documentos conforme eles forem utilizados e/ou alterados. No caso de perceber que há um documento na pasta que não foi descrito aqui, saiba que ele provavelmente estará em branco. 
 
-- **'funcoes.py':** arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário, em outras palavras, sempre que uma função repetitiva for criada.
+- **'funcoes.py':** arquivo de armazenamento de funções reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário, em outras palavras, sempre que uma função repetitiva for criada;
+-  **'classes.py':** arquivo de armazenamento de classes reutilizáveis, desenvolvidas nas atividades ao longo do semestre. Será atualizado quando necessário, em outras palavras, sempre que uma nova classe útil para novos notebooks for criada.
 
 <br>
 <hr>
@@ -31,4 +32,5 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 - Experimento R.04: Computando gradientes locais: aprendendo a computar gradientes, tanto manualmente como automaticamente; introdução à ferramenta 'autograd';
 
 **4. SEMANA 04**
-- 
+- Experimento R.05: finalizando a classe valor. Notebooks super importante para entender todos os métodos que compõem a classe.
+- Experimento R.06: construindo redes neurais artificiais.
