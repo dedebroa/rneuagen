@@ -32,5 +32,5 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 - Experimento R.04: Computando gradientes locais: aprendendo a computar gradientes, tanto manualmente como automaticamente; introdução à ferramenta 'autograd';
 
 **4. SEMANA 04**
-- Experimento R.05: finalizando a classe valor. Notebooks super importante para entender todos os métodos que compõem a classe.
-- Experimento R.06: construindo redes neurais artificiais.
+- Experimento R.05: finalizando a classe valor. Notebooks super importante para entender como os métodos que compõem a classe 'Valor' funcionam.
+- Experimento R.06: construindo redes neurais artificiais por partes: neurônios, camadas e rede com várias camadas.
