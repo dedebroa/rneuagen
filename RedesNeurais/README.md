@@ -37,3 +37,4 @@ De maneira geral, os conceitos estudados nesse semestre foram inspirados por con
 
 **4. SEMANA 05**
 - Experimento R.07: treinando uma rede neural.
+- Expeirmento R.08: treinando uma rede neural com o auxílio do 'pytorch', biblioteca famosa e muito útil.
