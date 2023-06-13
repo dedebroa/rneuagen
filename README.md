@@ -14,9 +14,9 @@ Ler sobre esses assuntos se mostra uma atividade muito interessante, uma vez que
 
 <br>**SOBRE A ORGANIZAÇÃO DO GITHUB:**
 - Pasta 'AlgoritmosGeneticos': todos os documentos disponibilizados dentro dela estarão relacionados com conceitos e exercícios de Alg. Genéticos. 
-> **Status: sendo atualizada**
+> **Status: `FINALIZADA`
 - Pasta 'Redes Neurais': todos os documentos nela presentes estarão relacionados com conceitos e exercícios relacionados com Redes Neurais.
-> Status: **ainda não iniciado**
+> Status: `FINALIZADA`
 
 <hr>
 
