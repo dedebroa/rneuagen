@@ -25,7 +25,7 @@
 
 <br>**Semana 04**
 - Experimento A.05: descobrindo a senha, um problema básico, mas diferente, envolvendo letras e minimização;
-- Experimento GA.06 - A Função de Himmenblau: descobrindo as coordenadas do ponto mínimo global da Função de Himmenblau usando algoritmos genéticos; problema de minimização (EM ANDAMENTO);
+- Experimento GA.06 - A Função de Himmenblau: descobrindo as coordenadas do ponto mínimo global da Função de Himmenblau usando algoritmos genéticos; problema de minimização (`NÃO FINALIZADO`);
 - 'himmenblau.png': imagem utilizada para elucidação de conceios no notebook do experimento escolhido;
 
 <br>**Semana 05**
@@ -41,3 +41,6 @@
 - Experimento A.09: Usando o módulo DEAP sem o eaSimple;
 - Experimento A.10: Resolvendo as caixas não-binárias com DEAP;
 - Experimento A.11: Descobrindo a senha com DEAP.
+
+<br>**Semana 08**
+- Exoerimento GA.03: Caixeiro Viajante com Gasolina Infinita e Sem Consciência Ambiental; problema de maximização com plot de grafo.
